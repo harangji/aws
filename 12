@@ -1,0 +1,11 @@
+
+console 단점
+수동만 가능
+
+aws elastic beanstalk
+자동으로 프로비저닝해줌
+인프라가 아닌 비즈니스 서비스에 집중할수있도록 지원
+
+aws cloudFormation
+
+
