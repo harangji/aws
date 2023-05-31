@@ -1,0 +1,92 @@
+리눅스 깔아서 EC2 웹 서버 만들기
+데이터베이스 RDS 생성
+둘 사이애 통신 연결하기
+
+Putty로 웹서버 접속
+
+
+
+-----------------------------------
+1. 웹서버 EC2 인스턴스 생성
+키 생성 - ppk 선택
+http 트래픽 허용 선택
+생성 완료
+
+2. RDS 데이터베이스 생성
+표준 생성- mysql 선택
+프리 티어 선택
+admin, 비번 1 8개
+ec2 컴퓨팅 리소스에 연결 선택 , ec2인스턴스 설정
+보안 그룹 새로 생성
+추가 구성- 초기 데이터베이스 이름 sample 설정
+암호화 활성화 해제 선택
+생성 완료
+
+3. putty 설치
+https://putty.org/
+Download PuTTY, 64-bit x86: putty-64bit-0.78-installer.msi
+
+
+4. 
+host name에 ec2 인스턴스 퍼블릭 ip 붙여넣기
+ssh - auth - credentiol 맨 위에 키 넣기, open
+session-> saved sessions
+
+--------------------PuTTy----------------------------
+1. 명령어-> ec2-user
+sudo yum -y update : 소프트웨어 최신버전 업데이트
+sudo yum -y install httpd php php-mysqlnd : 아파치 웹 서버 설치
+sudo service httpd start :웹서버 시작
+sudo chkconfig httpd on
+웹브라우저에서 퍼블릭 아이피로 접속 테스트 : It works 성공
+
+ec2유저에게 권한 주는 방법->
+sudo groupadd www : www그룹 생성
+sudo usermod -a -G www ec2-user : ec2-user를 www그룹에 포함
+exit
+
+PuTTy 재접속
+groups : www 그룹 생성 확인
+
+sudo chown -R root:www /var/www : 웹서버의 홈 디렉터리 소유권을 www그룹으로 이전
+sudo chmod 2775 /var/www : 그룹에 대해 쓰기 권한 부여
+find /var/www -type d -exec sudo chmod 2775 {} + : 생성될 하위 디렉터리에 쓰기 권한 부여
+find /var/www -type f -exec sudo chmod 0664 {} + : 생성될 파일에 쓰기 권한 부여
+
+2. 웹 홈폴더에 index.html작성
+cd /var/www/html
+>index.html
+nano index.html
+-html 만들기
+
+3.DB에 웹서버 연결
+mkdir /var/www/inc : DB 정보를 저장할 폴더 생성
+cd /var/www/inc
+>dbinfo.inc : 빈 파일 생성
+nano dbinfo.inc
+
+--------https://blog.naver.com/saga111/221421700438에서----
+
+<?php
+define('DB_SERVER', 'RDS EndPoint URL'); //데이터베이스 엔드포인트
+
+define('DB_USERNAME', 'tutorial_user'); // admin
+
+define('DB_PASSWORD', 'Master비밀번호'); //11111111
+
+define('DB_DATABASE', 'sample');
+?>
+복붙
+
+cd /var/www/html/
+>SamplePage.php
+nano SamplePage.php
+
+php 코드 복붙
+
+퍼불릭 ip/SamplePage.php 로 결과 확인하기
+끝
+
+
+
+
