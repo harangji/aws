@@ -1,0 +1,47 @@
+firwware검색해서 방화벽 해제
+
+<!doctype html>
+	<html>
+		<head>
+			<title>hihihihii</title>
+		</head>
+		<body>
+			<article>
+				<h1>hihi</h1>
+				<p>hello</p>
+			</article>
+			<img src="https://mywindowsserver2019136109j.s3.amazonaws.com/8666647_heart_icon+(1).png" alt="My Image">
+		</body>
+	</html>
+
+------------------------------------
+s3 버킷 만들기
+유일한 이름 주기
+
+이 버킷의 퍼블릭 엑세스 차단 설정 해제하기
+버킷 생성
+사진 업로드하기
+버킷에 들어가서 권한 탭
+정책 편집
+
+{
+    "Version":"2012-10-17",
+    "Statement":[
+        {
+            "Sid":"PublicReadGetObject",
+            "Effect":"Allow",
+            "Principal":"*",
+            "Action":[
+                "s3:GetObject"
+            ],
+            "Resource":[
+                "arn:aws:s3:::자기버킷이름/*"
+            ]
+        }
+    ]
+}
+
+버킷에서 url접속
+url복사
+window 가상에서 복붙
+
