@@ -68,11 +68,11 @@ nano dbinfo.inc
 --------https://blog.naver.com/saga111/221421700438에서----
 
 <?php
-define('DB_SERVER', 'RDS EndPoint URL'); //데이터베이스 엔드포인트
+define('DB_SERVER', ''); //빈칸에 데이터베이스 엔드포인트
 
-define('DB_USERNAME', 'tutorial_user'); // admin
+define('DB_USERNAME', ''); // 빈칸에 tutorial_user - admin
 
-define('DB_PASSWORD', 'Master비밀번호'); //11111111
+define('DB_PASSWORD', ''); //빈칸에 Master비밀번호 - 11111111
 
 define('DB_DATABASE', 'sample');
 ?>
