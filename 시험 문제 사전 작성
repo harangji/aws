@@ -81,8 +81,8 @@ nano index.html
 		</head>
 		<body>
 			<article>
-				<h1>h</h1>
-				<p>p</p>
+				<h1></h1>
+				<p></p>
 			</article>
 			<img src="" alt="My Image">
 			<!-- src빈칸에 S3 객체 url 복사 -->
