@@ -34,6 +34,23 @@ s3 버킷 만들기
 버킷에 들어가서 권한 탭
 정책 편집
 
+{
+    "Version":"2012-10-17",
+    "Statement":[
+        {
+            "Sid":"PublicReadGetObject",
+            "Effect":"Allow",
+            "Principal":"*",
+            "Action":[
+                "s3:GetObject"
+            ],
+            "Resource":[
+                "arn:aws:s3:::자기버킷이름/*"
+            ]
+        }
+    ]
+}
+
 --------------------PuTTy----------------------------
 1. 명령어-> 
 ec2-user
