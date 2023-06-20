@@ -72,7 +72,8 @@ nano index.html
 				<h1>hihi</h1>
 				<p>hello</p>
 			</article>
-			<img src="https://mywindowsserver2019136109j.s3.amazonaws.com/8666647_heart_icon+(1).png" alt="My Image">
+			<img src="" alt="My Image">
+			<!-- src빈칸에 S3 객체 url 복사 -->
 		</body>
 	</html>
   
