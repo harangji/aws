@@ -58,6 +58,7 @@ sudo usermod -a -G www ec2-user # ec2-user를 www그룹에 포함
 exit
 
 PuTTy 재접속
+ec2-user
 groups # www 그룹 생성 확인
 
 sudo chown -R root:www /var/www # 웹서버의 홈 디렉터리 소유권을 www그룹으로 이전
