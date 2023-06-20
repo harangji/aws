@@ -82,23 +82,19 @@ nano index.html
 <!doctype html>
 	<html>
 		<head>
-			<title>hihihihii</title>
+			<title>t</title>
 		</head>
 		<body>
 			<article>
-				<h1>hihi</h1>
-				<p>hello</p>
+				<h1>h</h1>
+				<p>p</p>
 			</article>
 			<img src="" alt="My Image">
 			<!-- src빈칸에 S3 객체 url 복사 -->
 		</body>
 	</html>
   
-3.DB에 웹서버 연결
-mkdir /var/www/inc # DB 정보를 저장할 폴더 생성
-cd /var/www/inc
->dbinfo.inc # 빈 파일 생성
-nano dbinfo.inc
+ip  /index.html 접속해서 확인
 
 
 
