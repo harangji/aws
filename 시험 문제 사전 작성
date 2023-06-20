@@ -11,11 +11,6 @@ Download PuTTY, 64-bit x86: putty-64bit-0.78-installer.msi
 
 
 3. 
-host name에 ec2 인스턴스 퍼블릭 ip 붙여넣기
-ssh - auth - credentiol 맨 위에 키 넣기, open
-session-> saved sessions
-
-4. 
 s3 버킷 만들기
 유일한 이름 주기 2019136109harang
 
@@ -41,6 +36,12 @@ s3 버킷 만들기
         }
     ]
 }
+
+
+4. 
+host name에 ec2 인스턴스 퍼블릭 ip 붙여넣기
+ssh - auth - credentiol 맨 위에 키 넣기, open
+session-> saved sessions
 
 --------------------PuTTy----------------------------
 1. 명령어-> 
