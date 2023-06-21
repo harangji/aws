@@ -34,15 +34,15 @@ session-> saved sessions
 
 --------------------PuTTy----------------------------
 1. 명령어-> ec2-user
-sudo yum -y update : 소프트웨어 최신버전 업데이트
-sudo yum -y install httpd php php-mysqlnd : 아파치 웹 서버 설치
-sudo service httpd start :웹서버 시작
+sudo yum -y update # 소프트웨어 최신버전 업데이트
+sudo yum -y install httpd php php-mysqlnd # 아파치 웹 서버 설치
+sudo service httpd start #웹서버 시작
 sudo chkconfig httpd on
-웹브라우저에서 퍼블릭 아이피로 접속 테스트 : It works 성공
+#웹브라우저에서 퍼블릭 아이피로 접속 테스트 : It works 성공
 
-ec2유저에게 권한 주는 방법->
-sudo groupadd www : www그룹 생성
-sudo usermod -a -G www ec2-user : ec2-user를 www그룹에 포함
+#ec2유저에게 권한 주는 방법->
+sudo groupadd www # www그룹 생성
+sudo usermod -a -G www ec2-user # ec2-user를 www그룹에 포함
 exit
 
 PuTTy 재접속
@@ -50,16 +50,16 @@ groups : www 그룹 생성 확인
 
 sudo chown -R root:www /var/www : 웹서버의 홈 디렉터리 소유권을 www그룹으로 이전
 sudo chmod 2775 /var/www : 그룹에 대해 쓰기 권한 부여
-find /var/www -type d -exec sudo chmod 2775 {} + : 생성될 하위 디렉터리에 쓰기 권한 부여
-find /var/www -type f -exec sudo chmod 0664 {} + : 생성될 파일에 쓰기 권한 부여
+find /var/www -type d -exec sudo chmod 2775 {} + # 생성될 하위 디렉터리에 쓰기 권한 부여
+find /var/www -type f -exec sudo chmod 0664 {} + # 생성될 파일에 쓰기 권한 부여
 
-2. 웹 홈폴더에 index.html작성
+#2. 웹 홈폴더에 index.html작성
 cd /var/www/html
 >index.html
 nano index.html
 -html 만들기
 
-3.DB에 웹서버 연결
+#3.DB에 웹서버 연결
 mkdir /var/www/inc : DB 정보를 저장할 폴더 생성
 cd /var/www/inc
 >dbinfo.inc : 빈 파일 생성
